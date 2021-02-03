@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String s = "Всё, что нам нужно – это " + Phraser.PhraserGen();
                 text.setText(s);
+                String left = s.substring(0, s.indexOf("– это") - 1);
+                String right = s.substring(s.indexOf("– это") + 7);
+                s = Character.toUpperCase(s.charAt(s.indexOf("– это") + 6)) + (right + " - это " + left + ".").toLowerCase();
+                tv_result.setText(s);
             }
         });
     }
